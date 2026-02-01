@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSession, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
+import { Navigation } from '@/components/Navigation';
 
 interface DashboardData {
   timestamp: string;
@@ -94,25 +95,15 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-slate-950 text-slate-200">
+      <Navigation />
+      <div className="max-w-7xl mx-auto p-6 pt-20">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="mb-8">
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <span className="text-4xl">🤖</span>
             TeleClaude Dashboard
           </h1>
-          <div className="flex items-center gap-4">
-            <span className="text-slate-400 text-sm">
-              {session?.user?.email}
-            </span>
-            <button
-              onClick={() => signOut({ callbackUrl: '/auth/signin' })}
-              className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg transition-colors text-sm"
-            >
-              Sign out
-            </button>
-          </div>
         </div>
 
         {/* Grid Layout */}
