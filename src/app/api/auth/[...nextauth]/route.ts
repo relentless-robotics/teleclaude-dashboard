@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 
-const ALLOWED_EMAILS = ["football2nick@gmail.com"]
+const ALLOWED_EMAILS = ["football2nick@gmail.com", "njliautaud@gmail.com"]
 
 const handler = NextAuth({
   providers: [
